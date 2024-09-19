@@ -108,7 +108,7 @@ public class UserDaoImpl implements IUserDao{
 		try {
 			IUserService service = new UserServiceImpl();
 			IUserDao dao = new UserDaoImpl();
-			dao.insert(new UserModel("ttnghia24@gmail.com","nghiatran1", "tran trong nghia", "123", null, 4, null, null));
+			dao.insert(new UserModel("ttnghia24","nghiatran1", "tran trong nghia", "123", null, 4, null, null));
 			
 		}catch (Exception e) {
 			// TODO: handle exception
