@@ -155,14 +155,14 @@ to {
 				placeholder="Username" name="username" required></label> <label
 				for="fullname"> <input type="text" placeholder="Full Name"
 				name="fullname" required></label> <label for="email"> <input
-type="text" placeholder="Email" name="email" required></label> <label
+				type="text" placeholder="Email" name="email" required></label> <label
 				for="phone"> <input type="text" placeholder="Phone"
 				name="phone" required></label> <label for="password"> <input
 				type="password" placeholder="Password" name="password" required></label>
-				<label for="repassword"> <input
-				type="password" placeholder="Repeat Password" name="repassword" required></label>
+			<label for="repassword"> <input type="password"
+				placeholder="Repeat Password" name="repassword" required></label>
 			<button type="submit">Register</button>
-			<a href="/LTWed9.9/login">Login</a>
+			<a href="/Helloworld/login">Login</a>
 		</div>
 	</form>
 </body>

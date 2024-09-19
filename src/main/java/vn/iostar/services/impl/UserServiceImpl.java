@@ -19,19 +19,11 @@ public class UserServiceImpl implements IUserService {
 			}
 			return null;
 	}
-	public static void main(String[] args) {
-		try {
-			IUserService userServie = new UserServiceImpl();
-			System.out.println(userServie.login("nghia", "123"));
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	@Override
 	public void insert(UserModel user) {
 		// TODO Auto-generated method stub
+		userDao.insert(user);
 		
 	}
 
@@ -50,18 +42,19 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public boolean checkExistEmail(String email) {
 		// TODO Auto-generated method stub
-		return false;
+		return userDao.checkExistEmail(email);
 	}
 
 	@Override
 	public boolean checkExistUsername(String username) {
 		// TODO Auto-generated method stub
-		return false;
+		return userDao.checkExistUsername(username);
 	}
 
 	@Override
 	public boolean checkExistPhone(String phone) {
 		// TODO Auto-generated method stub
-		return false;
+		return userDao.checkExistPhone(phone);
 	}
+	
 }
