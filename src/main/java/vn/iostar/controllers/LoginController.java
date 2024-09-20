@@ -17,7 +17,7 @@ import vn.iostar.models.UserModel;
 import vn.iostar.services.IUserService;
 import vn.iostar.services.impl.UserServiceImpl;
 
-@WebServlet(urlPatterns = { "/login", "/dangnhap" })
+@WebServlet(urlPatterns = { "/login"})
 
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = -5660203773190134466L;
