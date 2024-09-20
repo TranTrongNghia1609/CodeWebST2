@@ -4,6 +4,7 @@ import vn.iostar.ultis.Constant;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,11 +14,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.HttpSessionIdListener;
+import vn.iostar.dao.IUserDao;
+import vn.iostar.dao.impl.UserDaoImpl;
 import vn.iostar.models.UserModel;
 import vn.iostar.services.IUserService;
 import vn.iostar.services.impl.UserServiceImpl;
 
-@WebServlet(urlPatterns = { "/login"})
+@WebServlet(urlPatterns = { "/login" })
 
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = -5660203773190134466L;
@@ -88,9 +91,6 @@ public class LoginController extends HttpServlet {
 			req.getRequestDispatcher("/views/Login.jsp").forward(req, res);
 		}
 	}
-
-	
-	
 
 	private void saveRemeberMe(HttpServletResponse responese, String username) {
 		Cookie cookie = new Cookie(Constant.COOKIE_REMEMBER, username);

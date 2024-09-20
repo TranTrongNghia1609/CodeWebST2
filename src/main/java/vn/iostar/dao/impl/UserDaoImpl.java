@@ -104,15 +104,39 @@ public class UserDaoImpl implements IUserDao{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	@Override
+	public void update(UserModel user) {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+				String sql = "UPDATE users set email = ?, fullname = ?, password = ?, avatar = ?, roleid = ?, phone = ?, createddate = ? where username = ?";
+				try {
+					Connection conn = new DBconect().getDatabaseConnection();
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setString(1, user.getEmail());
+					ps.setString(8, user.getUsername());
+					ps.setString(2, user.getFullname());
+					ps.setString(3, user.getPassword());
+					ps.setString(4, user.getImages());
+					ps.setInt(5, user.getRoleid());
+					ps.setString(6, user.getPhone());
+					ps.setDate(7, user.getCreateDate());
+					ps.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+	}
 	public static void main(String[] args) {
 		try {
 			IUserService service = new UserServiceImpl();
 			IUserDao dao = new UserDaoImpl();
-			dao.insert(new UserModel("ttnghia24","nghiatran1", "tran trong nghia", "123", null, 4, null, null));
+			dao.update(new UserModel("nghiatran","nghiatran1", "tran trong nghia", "123", null, 4, null, null));
 			
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 	}
+
+
+	
 }

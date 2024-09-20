@@ -70,9 +70,9 @@ span.psw {
 </head>
 <body>
 
-<h2>Login Form</h2>
+<h2>Quên Mật Khẩu</h2>
 
-<form action="/Helloworld/login" method="post">
+<form action="ForgotPassword" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -84,19 +84,16 @@ span.psw {
     <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username">
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password">
+    <label for="Email"><b>Email</b></label>
+
+    <input type="text" placeholder="Enter Email" name="Email">
         
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    <button type="submit">Lấy lại mật khẩu</button>
+    
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
-    <a href="/Helloworld/register">Register</a>
-    <span class="psw ">Forgot <a href="ForgotPassword">password?</a></span>
   </div>
 </form>
 

@@ -34,7 +34,7 @@ public class UserServiceImpl implements IUserService {
 			}
 		long millis=System.currentTimeMillis();
 		java.sql.Date date=new java.sql.Date(millis);
-		userDao.insert(new UserModel(username, email, fullname,password,null,5,phone,date));
+		userDao.insert(new UserModel(username, email, fullname,password,null,3,phone,date));
 		return true;
 
 	}
@@ -56,5 +56,22 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return userDao.checkExistPhone(phone);
 	}
-	
+
+	@Override
+	public void update(UserModel user) {
+		// TODO Auto-generated method stub
+		
+		 userDao.update(user);
+	}
+
+	@Override
+	public boolean resetpassword(String username, String email, String password) {
+		// TODO Auto-generated method stub
+		UserModel user = new UserModel();
+		user = userDao.findByUsername(username);
+		user.setPassword(password);
+		userDao.update(user);
+		return true;	
+	}
+		
 }
