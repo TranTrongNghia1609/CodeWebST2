@@ -12,27 +12,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:choose>
-		<c:when test="${sessionScope.account == null}">
-			<div class="col-sm-6">
-				<ul class="list-inline right-topbar pull-right">
-					<li><a href="${pageContext.request.contextPath }/login">Login
-							</a> | <a href="${pageContext.request.contextPath }/register">Register
-							</a></li>
-					<li><i class="search fa fa-search search-button"></i></li>
-				</ul>
-			</div>
-		</c:when>
-		<c:otherwise>
-			<div class="col-sm-6">
-				<ul class="list-inline right-topbar pull-right">
-					<li><p>Hello ${sessionScope.account.fullname} | <a
-						href="${ pageContext.request.contextPath }/logout">Logout</a>
-						</p></li>
-					<li><i class="search fa fa-search search-button"></i></li>
-				</ul>
-			</div>
-		</c:otherwise>
-	</c:choose>
+	
 </body>
 </html>

@@ -10,6 +10,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class HelloworldController
  */
+@WebServlet(urlPatterns = { "/Helloworld" })
 public class HelloworldController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

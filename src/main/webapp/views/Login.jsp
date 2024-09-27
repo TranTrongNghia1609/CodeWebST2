@@ -1,104 +1,97 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+	pageEncoding="UTF-8"%>
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
 
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+<!-- BEGIN CONTENT -->
+<div class="col-md-9 col-sm-9">
+	<h1>Login</h1>
+	<div class="content-form-page">
+		<div class="row">
+			<div class="col-md-7 col-sm-7">
+				<c:if test="${alert !=null}">
+					<h3 class="alert alertdanger">${alert}</h3>
+				</c:if>
+				<form action="${pageContext.request.contextPath }/login" method="post" class="form-horizontal form-without-legend" role="form">
+					<div class="form-group">
+						<label for="email" class="col-lg-4 control-label">Username <span
+							class="require">*</span></label>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" id="username" name = "username" required>	
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="col-lg-4 control-label">Password
+							<span class="require">*</span>
+						</label>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" id="password " name="password" >
+							<input type="checkbox" checked="checked" name="remember"> Remember me
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-8 col-md-offset-4 padding-left-0">
+							<a href="${pageContext.request.contextPath }ForgotPassword">Forget Password?</a>
+						</div>
+					</div>
+					<div class="row">
+						<div
+							class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">
+							<button type="submit" class="btn btn-primary">Login</button>
+						</div>
+					</div>
+					<div class="row">
+						<div
+							class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-10 padding-right-30">
+							<hr>
+							<div class="login-socio">
+								<p class="text-muted">or login using:</p>
+								<ul class="social-icons">
+									<li><a href="#" data-original-title="facebook"
+										class="facebook" title="facebook"></a></li>
+									<li><a href="#" data-original-title="Twitter"
+										class="twitter" title="Twitter"></a></li>
+									<li><a href="#" data-original-title="Google Plus"
+										class="googleplus" title="Google Plus"></a></li>
+									<li><a href="#" data-original-title="Linkedin"
+										class="linkedin" title="LinkedIn"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4 col-sm-4 pull-right">
+				<div class="form-info">
+					<h2>
+						<em>Important</em> Information
+					</h2>
+					<p>Duis autem vel eum iriure at dolor vulputate velit esse vel
+						molestie at dolore.</p>
 
-button:hover {
-  opacity: 0.8;
-}
+					<button type="button" class="btn btn-default">More details</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END CONTENT -->
 
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
 
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
 
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
 
-.container {
-  padding: 16px;
-}
 
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-</style>
-</head>
-<body>
 
-<h2>Login Form</h2>
 
-<form action="/Helloworld/login" method="post">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
-<c:if test="${alert !=null}">
-<h3 class="alert alertdanger">${alert}</h3>
-</c:if>
 
-  <div class="container">
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username">
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password">
-        
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <a href="/Helloworld/register">Register</a>
-    <span class="psw ">Forgot <a href="ForgotPassword">password?</a></span>
-  </div>
-</form>
 
-</body>
-</html>
+
+
+
+
+
+
+
+
