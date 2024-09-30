@@ -28,11 +28,11 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public boolean register(String email, String password, String username, String fullname, String phone) {
+	public boolean register(String username, String password, String email, String fullname, String phone) {
 		if (userDao.checkExistUsername(username)) {
 			return false;
 			}
-		long millis=System.currentTimeMillis();
+		long millis=System.currentTimeMillis();	
 		java.sql.Date date=new java.sql.Date(millis);
 		userDao.insert(new UserModel(username, email, fullname,password,null,3,phone,date));
 		return true;

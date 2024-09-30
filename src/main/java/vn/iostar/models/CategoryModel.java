@@ -5,25 +5,25 @@ import java.io.Serializable;
 public class CategoryModel implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	private int catagoryid;
-	private String catagoryname;
+	private int categoryid;
+	private String categoryname;
 	private String images;
 	private int status;
 	public CategoryModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public int getCatagoryid() {
-		return catagoryid;
+	public int getCategoryid() {
+		return categoryid;
 	}
-	public void setCatagoryid(int catagoryid) {
-		this.catagoryid = catagoryid;
+	public void setCategoryid(int categoryid) {
+		this.categoryid = categoryid;
 	}
-	public String getCatagoryname() {
-		return catagoryname;
+	public String getCategoryname() {
+		return categoryname;
 	}
-	public void setCatagoryname(String catagoryname) {
-		this.catagoryname = catagoryname;
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
 	}
 	public String getImages() {
 		return images;
@@ -39,9 +39,10 @@ public class CategoryModel implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "CategoryModel [catagoryid=" + catagoryid + ", catagoryname=" + catagoryname + ", images=" + images
+		return "CategoryModel [categoryid=" + categoryid + ", categoryname=" + categoryname + ", images=" + images
 				+ ", status=" + status + "]";
 	}
+	
 	
 	
 }

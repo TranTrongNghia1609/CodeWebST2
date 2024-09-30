@@ -3,147 +3,102 @@
 <%@taglib prefix="fmt" uri="jakarta.tags.fmt"%>
 <%@taglib prefix="c" uri="jakarta.tags.core"%>
 <%@taglib prefix="fn" uri="jakarta.tags.functions"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-body {
-	font-family: Arial, Helvetica, sans-serif;
-}
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-}
 
-/* Set a style for all buttons */
-button {
-	background-color: #04AA6D;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-}
 
-button:hover {
-	opacity: 0.8;
-}
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-	width: auto;
-	padding: 10px 18px;
-	background-color: #f44336;
-}
 
-/* Center the image and position the close button */
-.imgcontainer {
-	text-align: center;
-	margin: 24px 0 12px 0;
-	position: relative;
-}
+<!-- BEGIN CONTENT -->
+<div class="col-md-9 col-sm-9">
+	<h1>Create an account</h1>
+	<div class="content-form-page">
+	  <div class="row">
+		<div class="col-md-7 col-sm-7">
+		<c:if test="${alert !=null}">
+	<h3 class="alert alert danger">${alert}</h3>
+</c:if>
+		  <form action="${pageContext.request.contextPath }/register" method="post" class="form-horizontal" role="form">
+			<fieldset>
+			  <legend>Your personal details</legend>
+			  <div class="form-group">
+				<label for="username" class="col-lg-4 control-label">Username <span class="require">*</span></label>
+				<div class="col-lg-8">
+				  <input type="text" class="form-control" id="username" name = "username">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="fullname" class="col-lg-4 control-label">Full Name <span class="require">*</span></label>
+				<div class="col-lg-8">
+				  <input type="text" class="form-control" id="fullname" name = "fullname">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="email" class="col-lg-4 control-label">Email <span class="require">*</span></label>
+				<div class="col-lg-8">
+				  <input type="text" class="form-control" id="email" name = "email">
+				</div>
+				<div class="form-group">
+					<label for="phone" class="col-lg-4 control-label">Phone <span class="require">*</span></label>
+					<div class="col-lg-8">
+					  <input type="text" class="form-control" id="phone" name = "phone">
+					</div>
+			  </div>
+			</fieldset>
+			<fieldset>
+			  <legend>Your password</legend>
+			  <div class="form-group">
+				<label for="password" class="col-lg-4 control-label">Password <span class="require">*</span></label>
+				<div class="col-lg-8">
+				  <input type="text" class="form-control" id="password" name = "password">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="repassword" class="col-lg-4 control-label">Repassword <span class="require">*</span></label>
+				<div class="col-lg-8">
+				  <input type="text" class="form-control" id="repassword" name = "repassword">
+				</div>
+			  </div>
+			</fieldset>
+			<fieldset>
+			  <legend>Newsletter</legend>
+			  <div class="checkbox form-group">
+				<label>
+				  <div class="col-lg-4 col-sm-4">Singup for Newsletter</div>
+				  <div class="col-lg-8 col-sm-8">
+					<input type="checkbox">
+				  </div>
+				</label>
+			  </div>
+			</fieldset>
+			<div class="row">
+			  <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">                        
+				<button type="submit" class="btn btn-primary">Create an account</button>
+				<button type="button" class="btn btn-default">Cancel</button>
+			  </div>
+			</div>
+		  </form>
+		</div>
+		<div class="col-md-4 col-sm-4 pull-right">
+		  <div class="form-info">
+			<h2><em>Important</em> Information</h2>
+			<p>Lorem ipsum dolor ut sit ame dolore  adipiscing elit, sed sit nonumy nibh sed euismod ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip  commodo quat.</p>
 
-img.avatar {
-	width: 40%;
-	border-radius: 50%;
-}
+			<p>Duis autem vel eum iriure at dolor vulputate velit esse vel molestie at dolore.</p>
 
-.container {
-	padding: 16px;
-}
+			<button type="button" class="btn btn-default">More details</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- END CONTENT -->
 
-span.psw {
-	float: right;
-	padding-top: 16px;
-}
 
-/* The Modal (background) */
-.modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0, 0, 0); /* Fallback color */
-	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-	padding-top: 60px;
-}
 
-/* Modal Content/Box */
-.modal-content {
-	background-color: #fefefe;
-	margin: 5% auto 15% auto;
-	/* 5% from the top, 15% from the bottom and centered */
-	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
-}
 
-/* The Close Button (x) */
-.close {
-	position: absolute;
-	right: 25px;
-	top: 0;
-	color: #000;
-	font-size: 35px;
-	font-weight: bold;
-}
 
-.close:hover, .close:focus {
-	color: red;
-	cursor: pointer;
-}
 
-/* Add Zoom Animation */
-.animate {
-	-webkit-animation: animatezoom 0.6s;
-	animation: animatezoom 0.6s
-}
-
-@
--webkit-keyframes animatezoom {
-	from {-webkit-transform: scale(0)
-}
-
-to {
-	-webkit-transform: scale(1)
-}
-
-}
-@
-keyframes animatezoom {
-	from {transform: scale(0)
-}
-
-to {
-	transform: scale(1)
-}
-
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-	span.psw {
-		display: block;
-		float: none;
-	}
-	.cancelbtn {
-		width: 100%;
-	}
-}
-</style>
-</head>
+<%-- </head>
 <body>
 	<form action="register" method="post">
 		<h2>Tạo tài khoản mới</h2>
@@ -166,4 +121,4 @@ to {
 		</div>
 	</form>
 </body>
-</html>
+</html> --%>
